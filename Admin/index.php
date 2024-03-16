@@ -57,9 +57,9 @@
                         <input type="text" name="harga_bk" class="form-control">
                     </div>
                     <button type="submit" class="btn btn-info btn-block">Tambah booking</button>
-                    <button type="submit" class="btn btn-info btn-block"><a target="_blank" href="cetak.php">
+                    <a class="btn btn-info btn-block" target="_blank" href="cetak.php">
                             <font color="White">Cetak Daftar booking</font>
-                        </a></button>
+                        </a>
                 </form>
 
             </div>

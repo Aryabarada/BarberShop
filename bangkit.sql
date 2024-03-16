@@ -53,11 +53,7 @@ INSERT INTO `users` (`id`, `username`, `alamat`, `password`) VALUES
 (1, 'herfan', 'jogja', '202cb962ac59075b964b07152d234b70');
 
 INSERT INTO `booking` (`id_booking`, `nama_booking`, `nomerhp_booking`, `service_booking`,`waktu_booking` , `tanggal_booking` , `pesan_booking` , `harga_booking`) VALUES
-(1, 'Matematika', 'Erlangga', 'Pendidikan', 'hai', ' ', ' ', ' '),
-(2, 'Si Kancil', 'booking Indonesia', 'Cerita Dongeng', 'hai', ' ', ' ', ' '),
-(3, 'Naruto Shippuden', 'Masashi Kishimoto', 'Komik', 'hai', ' ', ' ', ' '),
-(4, 'Dilan 1899', 'Pidi Baiq', 'Novel', 'hai', ' ', ' ', ' '),
-(5, 'Bobo', 'Kompas Gramedia', 'Majalah', 'hai', ' ', ' ', ' ');
+(1, 'Ahmad Doni', '083456789432', 'Potong Rambut', ' ', ' ', 'Potong Rapi', ' ');
 --
 -- Indexes for dumped tables
 --

@@ -1,34 +1,3 @@
-<?php
-//include 'config.php';
-include 'firebaseRDB.php';
-
-error_reporting(0);
-session_start();
-
-if (isset($_POST['submit'])) {
-    $username = $_SESSION['username'];
-    $nomorhp = $_POST['nomorhp_bk'];
-    $service = $_POST['service_bk'];
-    $waktu = $_POST['waktu_bk'];
-    $tanggal = $_POST['tanggal_bk'];
-    $pesan = $_POST['pesan_bk'];
-
-
-    $db = new firebaseRDB("https://bangkitv2-19540-default-rtdb.firebaseio.com/");
-
-    $insert = $db->insert("booking", [
-        "username"      => $username,
-        "nomorhp"       =>  $nomorhp,
-        "service"       => $service,
-        "waktu"         => $waktu,
-        "tanggal"       => $tanggal,
-        "pesan"         => $pesan
-    ]);
-    echo "berhasil";
-}
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -91,7 +60,7 @@ if (isset($_POST['submit'])) {
 
 
     <!-- Contact Start -->
-    <div class="section-header text-center" style="margin-top: 90px;">
+    <div class="section-header text-center" style="margin-top: 50px;">
         <p>FORM PEMESANAN BANGKIT BARBERSHOP</p>
     </div>
     <div class="contact" style="margin-bottom: 90px;">
@@ -102,29 +71,24 @@ if (isset($_POST['submit'])) {
                     <div class="col-md-8">
                         <div class="contact-form">
                             <div id="success"></div>
-                            <form role="form" action="" method="post">
+                            <form role="form" action="insert.php" method="post">
                                 <div class="form-group">
                                     <input type="text" id="name" name="nama_bk" placeholder="Nama" required="required" class="form-control" data-validation-required-message="Silahkan masukan nama">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" id="number" name="nomerhp_bk" placeholder="Nomer HP" required="required" class="form-control" data-validation-required-message="Silahkan masukan nomer HP">
                                 </div>
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <input type="text" id="service" name="service_bk" placeholder="Service" required="required" class="form-control" data-validation-required-message="Silahkan masukan service yang anda pilih">
-                                </div>
+                                </div> -->
                                 <div class="form-group">
                                     <input type="time" id="waktu" name="waktu_bk" required="required" class="form-control" data-validation-required-message="Silahkan masukan waktu booking">
                                 </div>
                                 <div class="form-group">
                                     <input type="date" id="tanggal" name="tanggal_bk" required="required" class="form-control" data-validation-required-message="Silahkan masukan tanggal booking">
                                 </div>
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <textarea class="form-control" id="massage" name="pesan_bk" placeholder="Pesan" required="required" class="form-control" data-validation-required-message="Silahkan masukan pesan"></textarea>
-                                </div>
-
-                                <!-- <div class="control-group">
-                                    <textarea class="form-control" id="pesan_bk" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
-                                    <p class="help-block text-danger"></p>
                                 </div> -->
                                 <div>
                                     <button class="btn" type="submit" id="sendMessageButton" name="submit">Booking Now</button>
@@ -137,7 +101,6 @@ if (isset($_POST['submit'])) {
         </div>
     </div>
     <!-- Contact End -->
-
 
     <!-- Footer Start -->
     <div class="footer">
